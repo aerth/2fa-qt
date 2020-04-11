@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     this->repopulate();
+    this->ui->pushButton->setAutoDefault(true);
 }
 
 MainWindow::~MainWindow()
@@ -36,6 +37,7 @@ void MainWindow::repopulate(void)
         ui->comboBox->clear();
     }
     ui->comboBox->addItems(items);
+    ui->comboBox->setFocus();
     this->currentKey = items[0];
     }
 }

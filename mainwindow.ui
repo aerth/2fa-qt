@@ -61,6 +61,9 @@
           <pointsize>8</pointsize>
          </font>
         </property>
+        <property name="toolTip">
+         <string>Copies the current OTP to clipboard</string>
+        </property>
         <property name="autoFillBackground">
          <bool>false</bool>
         </property>
@@ -68,10 +71,16 @@
          <string notr="true">color: white;</string>
         </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>Copy OTP</string>
+        </property>
+        <property name="shortcut">
+         <string>Return</string>
+        </property>
+        <property name="autoDefault">
+         <bool>true</bool>
         </property>
         <property name="default">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -85,6 +94,9 @@
           <family>Verdana</family>
           <pointsize>8</pointsize>
          </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
         </property>
        </widget>
       </item>
@@ -122,7 +134,7 @@
   </widget>
   <action name="actionQuit">
    <property name="text">
-    <string>Quit</string>
+    <string>&amp;Quit</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
@@ -130,12 +142,18 @@
   </action>
   <action name="actionAdd_New">
    <property name="text">
-    <string>Add New</string>
+    <string>&amp;Add New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
   <action name="actionAbout">
    <property name="text">
-    <string>About</string>
+    <string>A&amp;bout</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Space</string>
    </property>
   </action>
  </widget>
