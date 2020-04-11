@@ -114,7 +114,9 @@
     <property name="title">
      <string>Fi&amp;le</string>
     </property>
+    <addaction name="actionAdd_New"/>
     <addaction name="actionQuit"/>
+    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuQuit"/>
   </widget>
@@ -124,6 +126,16 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionAdd_New">
+   <property name="text">
+    <string>Add New</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>
