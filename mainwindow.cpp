@@ -107,12 +107,18 @@ void MainWindow::on_actionAdd_New_triggered()
     }
 }
 
+const QString about_msg = R"""(<h2>2fa-qt</h2>
+    <p><i>Simple QT Frontend for 2fa command.</i></p>
+    <p>Source code and README: <a href=\"https://github.com/aerth/2fa-qt\">https://github.com/aerth/2fa-qt</a></p>
+    <p>License: MIT</p>)""";
 void MainWindow::on_actionAbout_triggered()
 {
     QMessageBox messageBox;
     messageBox.setTextFormat(Qt::RichText);
     messageBox.setTextInteractionFlags(Qt::TextBrowserInteraction);
-    messageBox.setText("<p><i>Simple QT Frontend for 2fa command.</i></p><p>Source code and README: <a href=\"https://github.com/aerth/2fa-qt\">https://github.com/aerth/2fa-qt</a></p><p>License: MIT</p>");
+    messageBox.setText(about_msg);
     messageBox.setWindowTitle("About 2fa-qt");
     messageBox.exec();
 }
+
+
