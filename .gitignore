@@ -2,3 +2,4 @@
 /Makefile
 /2fa-qt
 /*.pro.user
+/build
