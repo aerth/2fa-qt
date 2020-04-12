@@ -26,9 +26,7 @@ void MainWindow::repopulate(void)
     QString cmd_stdout = process.readAllStandardOutput();
     // ouch. maybe don't have 2fa command.
     if (cmd_stdout.length() == 0) {
-       QString cmd_stderr = process.readAllStandardError();
-       QMessageBox messageBox;
-       messageBox.critical(nullptr,"Error",cmd_stderr);
+       QMessageBox::critical(nullptr,"Error", process.readAllStandardError());
        exit(111);
     } else {
     // populate combobox
@@ -51,8 +49,7 @@ void MainWindow::on_pushButton_released()
 {
     // ouch
     if (this->currentKey == nullptr){
-        QMessageBox messagebox;
-        messagebox.critical(nullptr,"Error", "No key selected");
+        QMessageBox::critical(nullptr,"Error", "No key selected");
         return;
     }
 
@@ -63,8 +60,7 @@ void MainWindow::on_pushButton_released()
     QString cmd_stdout = process.readAllStandardOutput();
     if (cmd_stdout.length() == 0) {
        QString cmd_stderr = process.readAllStandardError();
-       QMessageBox messageBox;
-       messageBox.critical(nullptr,"Error",cmd_stderr);
+       QMessageBox::critical(nullptr,"Error",cmd_stderr);
        exit(111);
     }
 
@@ -104,8 +100,7 @@ void MainWindow::on_actionAdd_New_triggered()
         QString cmd_stderr = process.readAllStandardError().replace("2fa key for "+text1+":", "");
         cmd_stderr = cmd_stderr.trimmed();
         if (process.exitCode() != 0 || cmd_stderr.length() != 0) {
-           QMessageBox messageBox;
-           messageBox.critical(nullptr, "Error " + QString::number(process.exitCode()), "Key not added. " + cmd_stderr);
+           QMessageBox::critical(nullptr, "Error " + QString::number(process.exitCode()), "Key not added. " + cmd_stderr);
         } else {
             this->repopulate();
         }
@@ -117,7 +112,7 @@ void MainWindow::on_actionAbout_triggered()
     QMessageBox messageBox;
     messageBox.setTextFormat(Qt::RichText);
     messageBox.setTextInteractionFlags(Qt::TextBrowserInteraction);
-    messageBox.setText("<p><i>Simple QT Frontend for 2fa command.</i></p><p>Source code: <a href=\"https://github.com/aerth/2fa-qt\">https://github.com/aerth/2fa-qt</a></p><p>License: MIT</p>");
+    messageBox.setText("<p><i>Simple QT Frontend for 2fa command.</i></p><p>Source code and README: <a href=\"https://github.com/aerth/2fa-qt\">https://github.com/aerth/2fa-qt</a></p><p>License: MIT</p>");
     messageBox.setWindowTitle("About 2fa-qt");
     messageBox.exec();
 }
