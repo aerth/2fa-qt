@@ -2,6 +2,8 @@
 
 Frontend for `rsc/2fa` command line 2FA OTP manager
 
+![screenshot](screenshot.png)
+
 ### dependencies
 ```
 GOBIN=$PWD go get -v -u github.com/rsc/2fa
